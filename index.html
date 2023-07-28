@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class StepCounter {
+        constructor() {
+          this.steps = 10;
+        }
+
+        increase() {
+          this.steps++;
+        }
+
+        decrease() {
+          this.steps--;
+        }
+
+        reset() {
+          this.steps = 0;
+        }
+
+        read() {
+          console.log(`تعداد قدم‌ها: ${this.steps}`);
+        }
+      }
+
+      // ایجاد شیء از کلاس قدم‌شمار
+      const stepCounter = new StepCounter();
+
+      // متدهای کلاس را با استفاده از prompt فراخوانی کنید
+      while (true) {
+        const command = prompt(
+          "لطفاً دستور خود را وارد کنید (increase/decrease/reset/read/exit):"
+        );
+
+        if (command === "increase") {
+          stepCounter.increase();
+        } else if (command === "decrease") {
+          stepCounter.decrease();
+        } else if (command === "reset") {
+          stepCounter.reset();
+        } else if (command === "read") {
+          stepCounter.read();
+        } else if (command === "exit") {
+          break;
+        } else {
+          console.log("دستور وارد شده نامعتبر است.");
+        }
+      }
+    </script>
+  </body>
+</html>
